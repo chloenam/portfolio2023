@@ -1,0 +1,240 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* font Spoqa Han Sans Neo */
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 700;
+    font-display: block;
+    src: url('../../../assets/font/SpoqaHanSansNeo-Bold.eot') format('embedded-opentype'), url('../../../assets/font//SpoqaHanSansNeo-Bold.woff2') format('woff2'), url('../../../assets/font/SpoqaHanSansNeo-Bold.woff') format('woff'), url('../../../assets/font/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 500;
+    font-display: block;
+    src: url('../../../assets/font/SpoqaHanSansNeo-Medium.eot') format('embedded-opentype'), url('../../../assets/font//SpoqaHanSansNeo-Medium.woff2') format('woff2'), url('../../../assets/font/SpoqaHanSansNeo-Medium.woff') format('woff'), url('../../../assets/font/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 400;
+    font-display: block;
+    src: url('../../../assets/font/SpoqaHanSansNeo-Regular.eot') format('embedded-opentype'), url('../../../assets/font//SpoqaHanSansNeo-Regular.woff2') format('woff2'), url('../../../assets/font/SpoqaHanSansNeo-Regular.woff') format('woff'), url('../../../assets/font/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 300;
+    font-display: block;
+    src: url('../../../assets/font/SpoqaHanSansNeo-Light.eot') format('embedded-opentype'), url('../../../assets/font//SpoqaHanSansNeo-Light.woff2') format('woff2'), url('../../../assets/font/SpoqaHanSansNeo-Light.woff') format('woff'), url('../../../assets/font/SpoqaHanSansNeo-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 100;
+    font-display: block;
+    src: url('../../../assets/font/SpoqaHanSansNeo-Thin.eot') format('embedded-opentype'), url('../../../assets/font//SpoqaHanSansNeo-Thin.woff2') format('woff2'), url('../../../assets/font/SpoqaHanSansNeo-Thin.woff') format('woff'), url('../../../assets/font/SpoqaHanSansNeo-Thin.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    line-height: 1.5;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1.5em;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: #000;
+}
+
+input {
+    outline: none;
+    border-width: 1px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    color: #000;
+}
+
+textarea {
+    resize: none;
+    outline: none;
+}
+
+.notoSans {
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+.clear::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.text-hide {
+    font-style: normal !important;
+    font-variant-ligatures: normal !important;
+    font-variant-caps: normal !important;
+    line-height: 0 !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    z-index: -1;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    position: absolute;
+}
