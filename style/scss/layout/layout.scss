@@ -1,0 +1,94 @@
+$browser-context: 16px;
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}
+/* visually-hidden style */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0px, 0px, 0px, 0px) !important;
+    white-space: nowrap !important;
+    border: 0px !important;
+}
+body {
+    background-color: #faf8ef;
+}
+/* progress-bar style */
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #faf8ef;
+    width: 100%;
+    height: rem(10px);
+
+    .progress-bar {
+        background: #000;
+        width: 0%;
+        height: 100%;
+        transition: width 0.2s ease-out;
+    }
+}
+/* //progress-bar style */
+
+main {
+    width: 100%;
+    padding: rem(48px) 0;
+    overflow-y: auto;
+
+    .main-wrap {
+        max-width: rem(688px);
+        padding: 0 rem(16px);
+        margin: 0 auto;
+    }
+
+    .main-content {
+        height: 500px;
+        margin-bottom: rem(48px);
+        padding: rem(24px) 0 0;
+
+        & ~ .main-content {
+            border-top: 1px solid #000;
+        }
+
+        h1 {
+            font-size: rem(40px);
+        }
+        h2 {
+            font-size: rem(26px);
+        }
+
+        p {
+        }
+
+        article {
+        }
+
+        &.info {
+            padding-top: rem(24px);
+            margin-bottom: rem(48px);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .progress {
+        height: rem(20px);
+    }
+
+    main {
+        padding: rem(96px) 0;
+
+        .main-content {
+            padding: rem(24px) 0 rem(72px);
+
+            &.info {
+                padding: rem(24px) 0 rem(48px);
+            }
+        }
+    }
+}
