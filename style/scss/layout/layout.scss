@@ -2,6 +2,9 @@ $browser-context: 16px;
 @function rem($pixels, $context: $browser-context) {
     @return #{$pixels/$context}rem;
 }
+body {
+    background-color: #faf8ef;
+}
 /* visually-hidden style */
 .visually-hidden {
     position: absolute !important;
@@ -14,22 +17,20 @@ $browser-context: 16px;
     white-space: nowrap !important;
     border: 0px !important;
 }
-body {
-    background-color: #faf8ef;
-}
+
 /* progress-bar style */
 .progress {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #faf8ef;
     width: 100%;
     height: rem(10px);
+    background-color: #faf8ef;
 
     .progress-bar {
-        background: #000;
         width: 0%;
         height: 100%;
+        background: #000;
         transition: width 0.2s ease-out;
     }
 }
@@ -42,17 +43,18 @@ main {
 
     .main-wrap {
         max-width: rem(688px);
-        padding: 0 rem(16px);
         margin: 0 auto;
+        padding: 0 rem(16px);
     }
 
     .main-content {
-        height: 500px;
         margin-bottom: rem(48px);
         padding: rem(24px) 0 0;
 
         & ~ .main-content {
-            border-top: 1px solid #000;
+            border-top: 1px solid #333;
+            color: #333;
+            word-break: keep-all;
         }
 
         h1 {
@@ -60,12 +62,77 @@ main {
         }
         h2 {
             font-size: rem(26px);
+            margin-bottom: rem(24px);
         }
+        h3 {
+            font-size: rem(20px);
 
-        p {
+            a {
+                &::after {
+                    content: '↗️';
+                    margin-left: 0.12em;
+                    font-weight: 500;
+                }
+            }
+        }
+        h4 {
+            font-size: rem(14px);
         }
 
         article {
+            header {
+                margin-top: rem(4px);
+
+                dl {
+                    padding-left: rem(4px);
+                    color: #717171;
+                    dd {
+                        font-size: rem(12px);
+                    }
+                }
+            }
+
+            .content {
+                margin-top: rem(26px);
+
+                .con-item {
+                    & ~ .con-item {
+                        margin-top: rem(20px);
+                        padding-top: rem(20px);
+                        border-top: 1px solid #e1e1e1;
+                    }
+                }
+
+                .con-block {
+                    h3 {
+                        font-size: rem(18px);
+                    }
+
+                    h3,
+                    h4 {
+                        margin-bottom: rem(8px);
+                    }
+
+                    & ~ .con-block {
+                        margin-top: rem(16px);
+                    }
+
+                    ul li {
+                        display: flex;
+                        // align-items: baseline;
+                        &::before {
+                            content: '';
+                            display: inline-block;
+                            width: 8px;
+                            height: 8px;
+                            margin-right: rem(4px);
+                            margin-top: rem(8px);
+                            background-color: #333;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
         }
 
         &.info {
@@ -88,6 +155,42 @@ main {
 
             &.info {
                 padding: rem(24px) 0 rem(48px);
+            }
+
+            article {
+                display: flex;
+
+                header {
+                    width: 40%;
+                    dl {
+                        dd {
+                            font-size: rem(12px);
+                        }
+                    }
+                }
+
+                .content {
+                    width: 60%;
+                    margin-top: 0;
+
+                    // .con-item {
+                    //     & ~ .con-item {
+                    //         margin-top: rem(20px);
+                    //         padding-top: rem(20px);
+                    //         border-top: 1px solid #e1e1e1;
+                    //     }
+                    // }
+
+                    // .con-block {
+                    //     h3 {
+                    //         font-size: rem(18px);
+                    //     }
+
+                    //     & ~ .con-block {
+                    //         margin-top: rem(14px);
+                    //     }
+                    // }
+                }
             }
         }
     }
