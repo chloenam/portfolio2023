@@ -3,7 +3,7 @@ $browser-context: 16px;
     @return #{$pixels/$context}rem;
 }
 body {
-    background-color: #faf8ef;
+    background-color: #fff9f2;
 }
 /* visually-hidden style */
 .visually-hidden {
@@ -57,14 +57,14 @@ main {
             word-break: keep-all;
         }
 
-        h1 {
+        h2 {
             font-size: rem(40px);
         }
-        h2 {
+        h3 {
             font-size: rem(26px);
             margin-bottom: rem(24px);
         }
-        h3 {
+        h4 {
             font-size: rem(20px);
 
             a {
@@ -75,7 +75,7 @@ main {
                 }
             }
         }
-        h4 {
+        h5 {
             font-size: rem(14px);
         }
 
