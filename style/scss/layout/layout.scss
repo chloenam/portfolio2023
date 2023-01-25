@@ -2,7 +2,7 @@ $browser-context: 16px;
 @function rem($pixels, $context: $browser-context) {
     @return #{$pixels/$context}rem;
 }
-body {
+.wrapper {
     background-color: #fff9f2;
 }
 /* visually-hidden style */
@@ -36,7 +36,7 @@ body {
 }
 /* //progress-bar style */
 
-main {
+.main {
     width: 100%;
     padding: rem(48px) 0;
     overflow-y: auto;
@@ -57,17 +57,19 @@ main {
             word-break: keep-all;
         }
 
-        h2 {
+        .info-tit {
             font-size: rem(40px);
         }
-        h3 {
+
+        .main-tit {
             font-size: rem(26px);
             margin-bottom: rem(24px);
         }
-        h4 {
+
+        .con-tit {
             font-size: rem(20px);
 
-            a {
+            .con-link {
                 &::after {
                     content: '↗️';
                     margin-left: 0.12em;
@@ -75,25 +77,26 @@ main {
                 }
             }
         }
-        h5 {
+
+        .con-sub-tit {
             font-size: rem(14px);
         }
 
-        article {
-            header {
-                margin-top: rem(4px);
+        .content-wrap {
+            .content-header {
+                margin-top: rem(10px);
 
-                dl {
+                .desc-list {
                     padding-left: rem(4px);
                     color: #717171;
-                    dd {
+                    .desc-item {
                         font-size: rem(12px);
                     }
                 }
             }
 
             .content {
-                margin-top: rem(26px);
+                margin-top: rem(10px);
 
                 .con-item {
                     & ~ .con-item {
@@ -104,22 +107,28 @@ main {
                 }
 
                 .con-block {
-                    h3 {
+                    .con-tit {
                         font-size: rem(18px);
+                        margin-bottom: rem(4px);
                     }
 
-                    h3,
-                    h4 {
+                    .con-sub-tit {
                         margin-bottom: rem(8px);
+
+                        & + .con-desc-item {
+                            &::before {
+                                display: none;
+                            }
+                        }
                     }
 
                     & ~ .con-block {
-                        margin-top: rem(16px);
+                        margin-top: rem(20px);
                     }
 
-                    ul li {
+                    .con-desc-item {
                         display: flex;
-                        // align-items: baseline;
+
                         &::before {
                             content: '';
                             display: inline-block;
@@ -161,7 +170,7 @@ main {
                 display: flex;
 
                 header {
-                    width: 40%;
+                    width: 30%;
                     dl {
                         dd {
                             font-size: rem(12px);
@@ -170,26 +179,8 @@ main {
                 }
 
                 .content {
-                    width: 60%;
+                    width: 65%;
                     margin-top: 0;
-
-                    // .con-item {
-                    //     & ~ .con-item {
-                    //         margin-top: rem(20px);
-                    //         padding-top: rem(20px);
-                    //         border-top: 1px solid #e1e1e1;
-                    //     }
-                    // }
-
-                    // .con-block {
-                    //     h3 {
-                    //         font-size: rem(18px);
-                    //     }
-
-                    //     & ~ .con-block {
-                    //         margin-top: rem(14px);
-                    //     }
-                    // }
                 }
             }
         }

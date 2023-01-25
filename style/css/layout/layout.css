@@ -1,5 +1,5 @@
 @charset "UTF-8";
-body {
+.wrapper {
   background-color: #fff9f2;
 }
 
@@ -34,93 +34,97 @@ body {
 }
 
 /* //progress-bar style */
-main {
+.main {
   width: 100%;
   padding: 3rem 0;
   overflow-y: auto;
 }
 
-main .main-wrap {
+.main .main-wrap {
   max-width: 43rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-main .main-content {
+.main .main-content {
   margin-bottom: 3rem;
   padding: 1.5rem 0 0;
 }
 
-main .main-content ~ .main-content {
+.main .main-content ~ .main-content {
   border-top: 1px solid #333;
   color: #333;
   word-break: keep-all;
 }
 
-main .main-content h2 {
+.main .main-content .info-tit {
   font-size: 2.5rem;
 }
 
-main .main-content h3 {
+.main .main-content .main-tit {
   font-size: 1.625rem;
   margin-bottom: 1.5rem;
 }
 
-main .main-content h4 {
+.main .main-content .con-tit {
   font-size: 1.25rem;
 }
 
-main .main-content h4 a::after {
+.main .main-content .con-tit .con-link::after {
   content: '↗️';
   margin-left: 0.12em;
   font-weight: 500;
 }
 
-main .main-content h5 {
+.main .main-content .con-sub-tit {
   font-size: 0.875rem;
 }
 
-main .main-content article header {
-  margin-top: 0.25rem;
+.main .main-content .content-wrap .content-header {
+  margin-top: 0.625rem;
 }
 
-main .main-content article header dl {
+.main .main-content .content-wrap .content-header .desc-list {
   padding-left: 0.25rem;
   color: #717171;
 }
 
-main .main-content article header dl dd {
+.main .main-content .content-wrap .content-header .desc-list .desc-item {
   font-size: 0.75rem;
 }
 
-main .main-content article .content {
-  margin-top: 1.625rem;
+.main .main-content .content-wrap .content {
+  margin-top: 0.625rem;
 }
 
-main .main-content article .content .con-item ~ .con-item {
+.main .main-content .content-wrap .content .con-item ~ .con-item {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid #e1e1e1;
 }
 
-main .main-content article .content .con-block h3 {
+.main .main-content .content-wrap .content .con-block .con-tit {
   font-size: 1.125rem;
+  margin-bottom: 0.25rem;
 }
 
-main .main-content article .content .con-block h3,
-main .main-content article .content .con-block h4 {
+.main .main-content .content-wrap .content .con-block .con-sub-tit {
   margin-bottom: 0.5rem;
 }
 
-main .main-content article .content .con-block ~ .con-block {
-  margin-top: 1rem;
+.main .main-content .content-wrap .content .con-block .con-sub-tit + .con-desc-item::before {
+  display: none;
 }
 
-main .main-content article .content .con-block ul li {
+.main .main-content .content-wrap .content .con-block ~ .con-block {
+  margin-top: 1.25rem;
+}
+
+.main .main-content .content-wrap .content .con-block .con-desc-item {
   display: flex;
 }
 
-main .main-content article .content .con-block ul li::before {
+.main .main-content .content-wrap .content .con-block .con-desc-item::before {
   content: '';
   display: inline-block;
   width: 8px;
@@ -131,7 +135,7 @@ main .main-content article .content .con-block ul li::before {
   border-radius: 50%;
 }
 
-main .main-content.info {
+.main .main-content.info {
   padding-top: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -153,13 +157,13 @@ main .main-content.info {
     display: flex;
   }
   main .main-content article header {
-    width: 40%;
+    width: 30%;
   }
   main .main-content article header dl dd {
     font-size: 0.75rem;
   }
   main .main-content article .content {
-    width: 60%;
+    width: 65%;
     margin-top: 0;
   }
 }

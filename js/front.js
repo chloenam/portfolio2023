@@ -1,5 +1,5 @@
 const progressBar = document.querySelector('.progress-bar');
-const main = document.querySelector('main');
+const main = document.querySelector('.main');
 
 const scrollProgressBar = () => {
     let scrollDistance = -main.getBoundingClientRect().top;
