@@ -1,10 +1,9 @@
 $browser-context: 16px;
+
 @function rem($pixels, $context: $browser-context) {
     @return #{$pixels/$context}rem;
 }
-.wrapper {
-    background-color: #fff9f2;
-}
+
 /* visually-hidden style */
 .visually-hidden {
     position: absolute !important;
@@ -25,7 +24,7 @@ $browser-context: 16px;
     left: 0;
     width: 100%;
     height: rem(10px);
-    background-color: #faf8ef;
+    background-color: #f9f9f9;
 
     .progress-bar {
         width: 0%;
@@ -35,6 +34,11 @@ $browser-context: 16px;
     }
 }
 /* //progress-bar style */
+
+/* main layout style*/
+.wrapper {
+    background-color: #f9f9f9;
+}
 
 .main {
     width: 100%;
@@ -52,18 +56,21 @@ $browser-context: 16px;
         padding: rem(24px) 0 0;
 
         & ~ .main-content {
-            border-top: 1px solid #333;
             color: #333;
             word-break: keep-all;
         }
 
         .info-tit {
             font-size: rem(40px);
+
+            .mark {
+                color: #505ad7;
+            }
         }
 
         .main-tit {
             font-size: rem(26px);
-            margin-bottom: rem(24px);
+            margin-bottom: rem(30px);
         }
 
         .con-tit {
@@ -75,20 +82,33 @@ $browser-context: 16px;
                     margin-left: 0.12em;
                     font-weight: 500;
                 }
+
+                &:hover {
+                    border-bottom: 2px solid #333;
+                }
             }
         }
 
         .con-sub-tit {
-            font-size: rem(14px);
+            font-size: rem(13px);
         }
 
         .content-wrap {
             .content-header {
                 margin-top: rem(10px);
 
+                .con-link {
+                    color: #505ad7;
+
+                    &:hover {
+                        border-bottom: 2px solid #505ad7;
+                    }
+                }
+
                 .desc-list {
                     padding-left: rem(4px);
                     color: #717171;
+
                     .desc-item {
                         font-size: rem(12px);
                     }
@@ -96,24 +116,46 @@ $browser-context: 16px;
             }
 
             .content {
-                margin-top: rem(10px);
+                margin-top: rem(20px);
 
                 .con-item {
                     & ~ .con-item {
                         margin-top: rem(20px);
-                        padding-top: rem(20px);
-                        border-top: 1px solid #e1e1e1;
+                        padding-top: rem(40px);
+                    }
+
+                    .con-block:last-child {
+                        margin-top: rem(20px);
                     }
                 }
 
                 .con-block {
                     .con-tit {
                         font-size: rem(18px);
-                        margin-bottom: rem(4px);
+                        margin-bottom: rem(8px);
+
+                        .con-tit-main {
+                            margin-bottom: rem(8px);
+
+                            & ~ .con-link {
+                                margin-right: rem(8px);
+                                margin-bottom: rem(8px);
+                            }
+                        }
+                    }
+
+                    .con-desc {
+                        font-size: rem(14px);
                     }
 
                     .con-sub-tit {
+                        display: inline-flex;
+                        padding: 0 rem(10px);
                         margin-bottom: rem(8px);
+                        background-color: #b9bcc7;
+                        border-radius: rem(14px);
+                        text-align: center;
+                        color: #fff;
 
                         & + .con-desc-item {
                             &::before {
@@ -123,18 +165,20 @@ $browser-context: 16px;
                     }
 
                     & ~ .con-block {
-                        margin-top: rem(20px);
+                        margin-top: rem(28px);
                     }
 
                     .con-desc-item {
                         display: flex;
+                        font-size: rem(14px);
 
                         &::before {
                             content: '';
                             display: inline-block;
-                            width: 8px;
-                            height: 8px;
-                            margin-right: rem(4px);
+                            flex-shrink: 0;
+                            width: rem(4px);
+                            height: rem(4px);
+                            margin-right: rem(6px);
                             margin-top: rem(8px);
                             background-color: #333;
                             border-radius: 50%;
@@ -144,9 +188,33 @@ $browser-context: 16px;
             }
         }
 
+        .contact-list {
+            display: flex;
+            .con-tit {
+                margin-right: rem(20px);
+                .con-link {
+                    font-size: rem(16px);
+                }
+            }
+        }
+
+        .round-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            .round-item {
+                padding: rem(4px) rem(24px);
+                margin: 0 rem(10px) rem(10px) 0;
+                background-color: #565cba;
+                border-radius: rem(18px);
+                color: #fff;
+                font-size: rem(14px);
+            }
+        }
+
         &.info {
             padding-top: rem(24px);
-            margin-bottom: rem(48px);
+            margin-bottom: rem(60px);
         }
     }
 }
@@ -156,7 +224,7 @@ $browser-context: 16px;
         height: rem(20px);
     }
 
-    main {
+    .main {
         padding: rem(96px) 0;
 
         .main-content {
@@ -166,13 +234,22 @@ $browser-context: 16px;
                 padding: rem(24px) 0 rem(48px);
             }
 
-            article {
+            .round-list {
+                .round-item {
+                    margin-bottom: rem(20px);
+                    margin-right: rem(20px);
+                    background-color: #565cba;
+                    font-size: rem(16px);
+                }
+            }
+
+            .content-wrap {
                 display: flex;
 
-                header {
-                    width: 30%;
-                    dl {
-                        dd {
+                .content-header {
+                    width: 35%;
+                    .desc-list {
+                        .desc-item {
                             font-size: rem(12px);
                         }
                     }
@@ -180,7 +257,17 @@ $browser-context: 16px;
 
                 .content {
                     width: 65%;
-                    margin-top: 0;
+                    margin-top: rem(10px);
+                }
+            }
+
+            .contact-list {
+                display: flex;
+                .con-tit {
+                    margin-right: rem(20px);
+                    .con-link {
+                        font-size: rem(18px);
+                    }
                 }
             }
         }
